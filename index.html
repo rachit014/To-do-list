@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://kit.fontawesome.com/eab6c7e050.js"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>My Todo App</h1>
+            <!-- for animation -->
+            <h1>My Todo App</h1>
+        </div>
+        <div id="container">
+            <div id="input">
+                <span><i class="fa-solid fa-clipboard-list"></i></span>
+                <input type="text" id="input-todo"
+                    placeholder="Enter your todos" />
+                <button id="btn" class="add-btn">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </button>
+            </div>
+            <div class="task-status">
+                <div id="complete-task">
+                    <img src="./images//double-check.png" class="completeAll" />
+                    <p class="completeAll">complete all tasks</p>
+                </div>
+                <div id="clear-completed">
+                    <img src="./images/checklist.png" class="clear" />
+                    <p class="clear">clear completed</p>
+                </div>
+            </div>
+            <hr />
+            <ul id="todos">
+                <!-- js content -->
+            </ul>
+            <hr />
+            <div class="task-filters">
+                <!-- for large devices -->
+                <p id="task-left">2 tasks left</p>
+                <ul id="filters">
+                    <li id="all">All</li>
+                    <li id="uncompleted">Uncomplete</li>
+                    <li id="completed">Completed</li>
+                </ul>
+
+                <!-- for smaller devices -->
+                <div id="mob-filters">
+                    <button class="dropbtn">Todos Filters
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-content" id="drp-cnt">
+                        <li id="all">All</li>
+                        <li id="uncompleted">Uncomplete</li>
+                        <li id="completed">Completed</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <script src="todos.js"></script>
+    </body>
+</html>
