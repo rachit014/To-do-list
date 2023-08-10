@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Makasar&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif Makasar', serif;
+}
+
+body {
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #6e7174, #232526);
+    background: linear-gradient(to top, #6e7174, #232526);
+    height: 100vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    background-color: #c2beba;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/******************************************************* header ***********************************************/
+.header {
+    width: 100%;
+    height: 20%;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* header animation */
+.header h1 {
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.header h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(76, 160, 172);
+}
+
+.header h1:nth-child(2) {
+    color: black;
+    animation: myanimation 4s ease-in-out infinite;
+}
+
+@keyframes myanimation {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%);
+    }
+}
+
+/******************************************************* main container *************************************************/
+#container {
+    width: 50%;
+    background-color: white;
+    padding: 3%;
+    box-shadow: rgba(8, 8, 8, 0.25) 0px 14px 28px, rgba(12, 9, 9, 0.22) 0px 10px 10px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+#input {
+    position: relative;
+}
+
+#input input {
+    padding: 20px 25px 20px 50px;
+    font-size: 1.5rem;
+    width: 100%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: rgba(197, 197, 214, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+#input input:focus {
+    background-image: none;
+    outline: 2px solid rgb(76, 160, 172);
+}
+
+#input span i {
+    position: absolute;
+    top: 24px;
+    left: 15px;
+    font-size: 1.8rem;
+    color: rgb(76, 160, 172);
+}
+
+.add-btn {
+    display: none;
+    border: none;
+    position: absolute;
+    right: 30px;
+    top: 24px;
+    background-color: transparent;
+}
+
+
+
+#input .add-btn i {
+    font-size: 1.6rem;
+    color: rgb(76, 160, 172);
+}
+
+.add-btn i:hover {
+    cursor: pointer;
+}
+
+.task-status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #63605d;
+    padding: 5px 0;
+}
+
+#complete-task {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    transform: scale(1);
+    transition: all 0.1s ease-in-out;
+}
+
+#complete-task img {
+    height: 25px;
+    object-fit: contain;
+}
+
+#clear-completed {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    transform: scale(1);
+    transition: all 0.1s ease-in-out;
+}
+
+#clear-completed img {
+    height: 25px;
+    object-fit: contain;
+}
+
+#complete-task:hover,
+#clear-completed:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    font-weight: 500;
+    color: rgb(76, 160, 172);
+
+}
+
+#todos {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+#todos li {
+    font-size: 1.3rem;
+    padding: 10px;
+    text-transform: capitalize;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+}
+
+#todos li:hover {
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* hide default check box */
+#todos li input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+
+#todos label {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    width: 480px;
+}
+
+#todos label:before {
+    content: '';
+    background-color: transparent;
+    border: 2px solid black;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+#todos input:checked+label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 13px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(76, 160, 172);
+}
+
+#todos input:checked+label:before {
+    background: white;
+}
+
+#todos input:checked+label {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+#delete,
+#edit {
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all ease-in-out;
+}
+
+#edit {
+    padding: 8px;
+}
+
+#delete img,
+#edit img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#delete:hover,
+#edit:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px -1px 4px;
+    cursor: pointer;
+}
+
+.task-filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #63605d;
+}
+
+#mob-filters {
+    display: none;
+}
+
+#filters {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#filters li {
+    transform: scale(1);
+    transition: all 0.1s ease-in-out;
+}
+
+#filters li:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    font-weight: 500;
+    color: rgb(76, 160, 172);
+}
+
+hr {
+    border: 1px solid #e9e5e1;
+}
+
+/* when there are no todos */
+h3 {
+    padding: 20px;
+}
+
+
+/* for smaller devices */
+.task-filters #mob-filters .dropbtn {
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    color: #63605d;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    /* right: 80px; */
+    background-color: white;
+    min-width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    z-index: 1;
+}
+
+/* li tags inside the dropdown */
+.dropdown-content li {
+    float: none;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content li:hover {
+    background-color: rgb(76, 160, 172);
+
+}
+
+
+/* responsive css */
+
+@media screen and (max-width:1024px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    #todos label {
+        font-size: 1rem;
+        width: 300px;
+        /* border: 2px solid red; */
+    }
+
+    .task-filters #filters {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #todos label {
+        font-size: 1rem;
+        width: 300px;
+        /* border: 2px solid red; */
+    }
+
+    .task-filters #filters {
+        display: none;
+    }
+
+    .task-filters #mob-filters {
+        display: block;
+        overflow: hidden;
+        float: left;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    #container {
+        width: 70%;
+    }
+
+    #input input {
+        padding: 10px 10px 10px 40px;
+        font-size: 1.2rem;
+    }
+
+    #input span {
+        position: relative;
+        right: 5px;
+        bottom: 28px;
+    }
+
+    #todos label {
+        font-size: 0.9rem;
+        width: 200px;
+        /* border: 2px solid red; */
+    }
+
+    #input button {
+        top: 12px;
+        right: 10px;
+    }
+
+    .task-status {
+        /* font-size: 0.8rem; */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .task-status #complete-task,
+    .task-status #clear-completed {
+        width: 100%;
+        padding: 5px;
+        justify-content: flex-start;
+    }
+
+    .task-status #clear-completed {
+        margin-left: 8px;
+    }
+
+
+}
